@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>My Profile · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="profile" data-title="My Profile" data-subtitle="Your public profile and recent activity.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <div class="panel" style="padding:0;overflow:hidden">
+        <div class="profile-cover"></div>
+        <div class="profile-top">
+          <div class="p-avatar-xl">AR</div>
+          <div class="d-flex flex-grow-1 justify-content-between align-items-end flex-wrap gap-3">
+            <div><h4 class="fw-bold mb-0">Alex Rivera <i class="bi bi-patch-check-fill" style="color:var(--violet)"></i></h4><span class="panel-sub">Administrator · alex@pulse.app</span></div>
+            <div class="d-flex gap-2"><a href="settings.html" class="btn-soft"><i class="bi bi-pencil"></i> Edit</a><button class="btn-grad"><i class="bi bi-share"></i> Share</button></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="grid-2">
+        <div class="d-flex flex-column gap-4">
+          <div class="stats-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="stat-card"><h3 class="stat-value" data-count="1829">0</h3><p class="stat-label">Orders handled</p></div>
+            <div class="stat-card"><h3 class="stat-value" data-count="48295" data-prefix="$">$0</h3><p class="stat-label">Revenue</p></div>
+            <div class="stat-card"><h3 class="stat-value" data-count="486">0</h3><p class="stat-label">VIP clients</p></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><h5 class="panel-title">Recent Activity</h5><p class="panel-sub">What you've been up to</p></div></div>
+            <div class="timeline">
+              <div class="tl-item"><p>Approved refund for order <b>#1826</b></p><span>Today, 10:24</span></div>
+              <div class="tl-item"><p>Added new product <b>Wireless Mouse</b></p><span>Yesterday, 16:05</span></div>
+              <div class="tl-item"><p>Invited <b>Sara Roy</b> as Admin</p><span>Nov 19</span></div>
+              <div class="tl-item"><p>Generated <b>November Sales</b> report</p><span>Nov 18</span></div>
+              <div class="tl-item"><p>Updated store billing details</p><span>Nov 15</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column gap-4">
+          <div class="panel">
+            <h6 class="fw-bold mb-3">About</h6>
+            <p class="panel-sub" style="line-height:1.7">Running the Pulse store end-to-end — operations, catalogue and the team. Big on coffee, clean dashboards and shipping fast.</p>
+            <div class="menu-divider my-3"></div>
+            <div class="setting-row"><div class="sr-info"><strong>Location</strong></div><span class="muted">San Francisco, CA</span></div>
+            <div class="setting-row"><div class="sr-info"><strong>Joined</strong></div><span class="muted">Jan 2024</span></div>
+            <div class="setting-row"><div class="sr-info"><strong>Member tier</strong></div><span class="chip v">Pro</span></div>
+          </div>
+          <div class="panel">
+            <h6 class="fw-bold mb-3">Skills</h6>
+            <div class="d-flex flex-wrap gap-2"><span class="chip v">Operations</span><span class="chip b">Analytics</span><span class="chip g">Support</span><span class="chip a">Marketing</span><span class="chip">Inventory</span></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+</body>
+</html>

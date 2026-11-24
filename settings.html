@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Settings · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="settings" data-title="Settings" data-subtitle="Manage your account and preferences.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><div><h5 class="panel-title">Profile Information</h5><p class="panel-sub">Update your personal details</p></div></div>
+          <div class="form-grid">
+            <div class="field"><label>First name</label><input class="input" value="Alex" /></div>
+            <div class="field"><label>Last name</label><input class="input" value="Rivera" /></div>
+            <div class="field"><label>Email</label><input class="input" type="email" value="alex@pulse.app" /></div>
+            <div class="field"><label>Phone</label><input class="input" value="+1 555 0142" /></div>
+          </div>
+          <div class="field"><label>Role</label><select class="select"><option>Administrator</option><option>Editor</option><option>Viewer</option></select></div>
+          <div class="field"><label>Bio</label><textarea class="input" rows="3">Running the Pulse store. Coffee, charts and clean UI.</textarea></div>
+          <div class="d-flex gap-2"><button class="btn-grad"><i class="bi bi-check-lg"></i> Save Changes</button><button class="btn-soft">Cancel</button></div>
+        </div>
+
+        <div class="d-flex flex-column gap-4">
+          <div class="panel">
+            <div class="panel-head"><div><h5 class="panel-title">Preferences</h5><p class="panel-sub">Notifications & privacy</p></div></div>
+            <div class="setting-row"><div class="sr-info"><strong>Email notifications</strong><span>Order and account emails</span></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+            <div class="setting-row"><div class="sr-info"><strong>Push notifications</strong><span>Real-time browser alerts</span></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+            <div class="setting-row"><div class="sr-info"><strong>Weekly digest</strong><span>Summary every Monday</span></div><label class="switch"><input type="checkbox"><span></span></label></div>
+            <div class="setting-row"><div class="sr-info"><strong>Two-factor auth</strong><span>Extra login security</span></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><h5 class="panel-title">Appearance</h5><p class="panel-sub">Theme preference</p></div></div>
+            <div class="setting-row"><div class="sr-info"><strong>Dark mode</strong><span>Use the top-bar toggle any time</span></div><label class="switch"><input type="checkbox" id="darkSwitch"><span></span></label></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+  <script>
+    (function () {
+      var sw = document.getElementById("darkSwitch");
+      var html = document.documentElement;
+      function sync() { sw.checked = html.getAttribute("data-bs-theme") === "dark"; }
+      sync();
+      sw.addEventListener("change", function () {
+        var next = sw.checked ? "dark" : "light";
+        html.setAttribute("data-bs-theme", next);
+        try { localStorage.setItem("pulse-theme", next); } catch (e) {}
+        var icon = document.querySelector("#themeToggle i");
+        if (icon) icon.className = next === "dark" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
+      });
+      // keep in sync if the top-bar toggle is used
+      var tb = document.getElementById("themeToggle");
+      if (tb) tb.addEventListener("click", function () { setTimeout(sync, 10); });
+    })();
+  </script>
+</body>
+</html>

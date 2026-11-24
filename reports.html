@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Reports · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="reports" data-title="Reports" data-subtitle="Generate and download business reports.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <div class="grid-3">
+        <div class="panel"><span class="stat-icon ic-violet mb-3 d-inline-grid"><i class="bi bi-graph-up"></i></span><h6 class="fw-bold mb-1">Sales Report</h6><p class="panel-sub mb-3">Revenue, orders & refunds for the selected period.</p><button class="btn-soft"><i class="bi bi-download"></i> Download PDF</button></div>
+        <div class="panel"><span class="stat-icon ic-blue mb-3 d-inline-grid"><i class="bi bi-people"></i></span><h6 class="fw-bold mb-1">Customer Report</h6><p class="panel-sub mb-3">Acquisition, retention and lifetime value.</p><button class="btn-soft"><i class="bi bi-download"></i> Download PDF</button></div>
+        <div class="panel"><span class="stat-icon ic-green mb-3 d-inline-grid"><i class="bi bi-box-seam"></i></span><h6 class="fw-bold mb-1">Inventory Report</h6><p class="panel-sub mb-3">Stock levels, low-stock alerts and movement.</p><button class="btn-soft"><i class="bi bi-download"></i> Download CSV</button></div>
+        <div class="panel"><span class="stat-icon ic-amber mb-3 d-inline-grid"><i class="bi bi-wallet2"></i></span><h6 class="fw-bold mb-1">Tax Summary</h6><p class="panel-sub mb-3">Collected tax grouped by region and rate.</p><button class="btn-soft"><i class="bi bi-download"></i> Download PDF</button></div>
+        <div class="panel"><span class="stat-icon ic-violet mb-3 d-inline-grid"><i class="bi bi-megaphone"></i></span><h6 class="fw-bold mb-1">Marketing Report</h6><p class="panel-sub mb-3">Campaign performance and conversion funnels.</p><button class="btn-soft"><i class="bi bi-download"></i> Download PDF</button></div>
+        <div class="panel"><span class="stat-icon ic-blue mb-3 d-inline-grid"><i class="bi bi-arrow-repeat"></i></span><h6 class="fw-bold mb-1">Subscriptions</h6><p class="panel-sub mb-3">Active plans, churn and MRR breakdown.</p><button class="btn-soft"><i class="bi bi-download"></i> Download CSV</button></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h5 class="panel-title">Recently Generated</h5><p class="panel-sub">Your last exports</p></div></div>
+        <div class="table-responsive">
+          <table class="table pulse-table align-middle mb-0">
+            <thead><tr><th>Report</th><th>Type</th><th>Size</th><th>Generated</th><th class="text-end">Action</th></tr></thead>
+            <tbody>
+              <tr><td class="fw-semibold">November Sales</td><td><span class="chip v">PDF</span></td><td class="muted">2.4 MB</td><td class="muted">Nov 21, 2026</td><td class="text-end"><a href="#" class="btn-ghost">Download <i class="bi bi-download"></i></a></td></tr>
+              <tr><td class="fw-semibold">Q3 Customers</td><td><span class="chip g">CSV</span></td><td class="muted">840 KB</td><td class="muted">Nov 18, 2026</td><td class="text-end"><a href="#" class="btn-ghost">Download <i class="bi bi-download"></i></a></td></tr>
+              <tr><td class="fw-semibold">Inventory Snapshot</td><td><span class="chip g">CSV</span></td><td class="muted">1.1 MB</td><td class="muted">Nov 15, 2026</td><td class="text-end"><a href="#" class="btn-ghost">Download <i class="bi bi-download"></i></a></td></tr>
+              <tr><td class="fw-semibold">Tax Summary Oct</td><td><span class="chip v">PDF</span></td><td class="muted">612 KB</td><td class="muted">Nov 02, 2026</td><td class="text-end"><a href="#" class="btn-ghost">Download <i class="bi bi-download"></i></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+</body>
+</html>

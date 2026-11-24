@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try{if(localStorage.getItem("pulse-auth")==="1"){window.location.replace("index.html");return;}var t=localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);}catch(e){}})();</script>
+  <title>Sign in · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+
+    <!-- Left: branded showcase -->
+    <div class="auth-side">
+      <div class="auth-blobs"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+      <div class="auth-dots"></div>
+
+      <div>
+        <div class="sidebar-brand" style="padding:0">
+          <span class="brand-logo"><i class="bi bi-activity"></i></span>
+          <span class="brand-name" style="color:#fff">Pulse<small style="color:rgba(255,255,255,.7)">Admin Panel</small></span>
+        </div>
+      </div>
+
+      <div>
+        <span class="auth-badge"><i class="bi bi-stars"></i> Analytics 2.0 is here</span>
+        <h2 class="fw-bold" style="font-size:2rem;line-height:1.18;margin-bottom:26px">Everything your store<br>needs, in one place.</h2>
+
+        <!-- Product preview with depth -->
+        <div class="auth-preview">
+          <div class="prev-back"></div>
+          <div class="auth-glass">
+            <div class="ag-top">
+              <div><div class="ag-label">Revenue this month</div><div class="ag-value">$48,295</div></div>
+              <span class="ag-trend"><i class="bi bi-arrow-up-right"></i> 12.5%</span>
+            </div>
+            <div class="ag-bars">
+              <span style="height:38%"></span><span style="height:52%"></span><span style="height:44%"></span>
+              <span style="height:66%"></span><span style="height:58%"></span><span class="hi" style="height:88%"></span>
+              <span style="height:72%"></span><span style="height:94%"></span>
+            </div>
+            <div class="prev-stats">
+              <span>Orders<b>1,829</b></span>
+              <span>Customers<b>9,542</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-quote">
+          <p>“Pulse replaced three separate tools for us — our team ships twice as fast now.”</p>
+          <div class="aq-by"><span class="aq-ava a3">SR</span> Sara Roy · Head of Operations</div>
+        </div>
+      </div>
+
+      <div style="opacity:.7;font-size:.82rem;z-index:2;position:relative">© 2026 Pulse Admin · Trusted by 12k+ teams</div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="auth-form">
+      <div class="auth-card">
+        <div class="d-lg-none mb-4"><div class="sidebar-brand" style="padding:0"><span class="brand-logo"><i class="bi bi-activity"></i></span><span class="brand-name">Pulse</span></div></div>
+        <h3 class="fw-bold mb-1">Welcome back 👋</h3>
+        <p class="panel-sub mb-4">Sign in to continue to your dashboard.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label>Email</label>
+            <div class="input-icon"><i class="bi bi-envelope ii"></i><input class="input" type="email" value="alex@pulse.app" required /></div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="input-icon"><i class="bi bi-lock ii"></i><input class="input" id="pw" type="password" value="password" style="padding-right:42px" required /><button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password"><i class="bi bi-eye"></i></button></div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <label class="d-flex align-items-center gap-2" style="font-size:.85rem;color:var(--text-soft)"><input type="checkbox" checked /> Remember me</label>
+            <a href="#" class="btn-ghost">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-grad shimmer w-100 justify-content-center">Sign in <i class="bi bi-arrow-right"></i></button>
+        </form>
+        <div class="d-flex align-items-center gap-3 my-4"><div style="flex:1;height:1px;background:var(--border)"></div><span class="muted" style="font-size:.8rem">or continue with</span><div style="flex:1;height:1px;background:var(--border)"></div></div>
+        <div class="social-row">
+          <button class="btn-soft justify-content-center"><i class="bi bi-google"></i> Google</button>
+          <button class="btn-soft justify-content-center"><i class="bi bi-github"></i> GitHub</button>
+        </div>
+        <p class="text-center panel-sub mt-4" style="margin-bottom:0">New here? <a href="#" style="color:var(--violet);font-weight:600;text-decoration:none">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      try { localStorage.setItem("pulse-auth", "1"); } catch (err) {}
+      window.location.href = "index.html";
+    });
+    (function () {
+      var t = document.getElementById("pwToggle"), pw = document.getElementById("pw");
+      t.addEventListener("click", function () {
+        var show = pw.type === "password";
+        pw.type = show ? "text" : "password";
+        t.querySelector("i").className = show ? "bi bi-eye-slash" : "bi bi-eye";
+      });
+    })();
+  </script>
+</body>
+</html>

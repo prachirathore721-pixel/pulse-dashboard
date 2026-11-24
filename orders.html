@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Orders · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="orders" data-title="Orders" data-subtitle="Manage and track every order across your store.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <section class="stats-grid">
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-blue"><i class="bi bi-bag-check-fill"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 8.2%</span></div><h3 class="stat-value" data-count="1829">0</h3><p class="stat-label">Total Orders</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-green"><i class="bi bi-check2-circle"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 6.1%</span></div><h3 class="stat-value" data-count="1542">0</h3><p class="stat-label">Completed</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-amber"><i class="bi bi-hourglass-split"></i></span><span class="trend down"><i class="bi bi-arrow-down-right"></i> 1.4%</span></div><h3 class="stat-value" data-count="214">0</h3><p class="stat-label">Pending</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-violet"><i class="bi bi-currency-dollar"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 12.5%</span></div><h3 class="stat-value" data-count="48295" data-prefix="$">$0</h3><p class="stat-label">Order Revenue</p></div>
+      </section>
+
+      <div class="panel">
+        <div class="toolbar">
+          <div class="filter-tabs" data-target="#ordersTable"><button class="active" data-filter="all">All</button><button data-filter="ok">Completed</button><button data-filter="wait">Pending</button><button data-filter="fail">Refunded</button></div>
+          <div class="d-flex gap-2 align-items-center">
+            <div class="search-box"><i class="bi bi-search"></i><input type="text" placeholder="Search orders..." data-search="#ordersTable tbody tr" aria-label="Search orders" /></div>
+            <button class="btn-grad"><i class="bi bi-plus-lg"></i> New Order</button>
+          </div>
+        </div>
+        <div class="table-responsive" id="ordersTable">
+          <table class="table pulse-table align-middle mb-0">
+            <thead><tr><th>Order</th><th>Customer</th><th>Product</th><th>Amount</th><th>Status</th><th class="text-end">Date</th></tr></thead>
+            <tbody>
+              <tr data-status="ok"><td class="fw-semibold">#1829</td><td><div class="cust"><span class="c-ava a1">MK</span>Maya Khan</div></td><td>Pro Subscription</td><td class="fw-semibold">$149.00</td><td><span class="pill ok">Completed</span></td><td class="text-end muted">Nov 21</td></tr>
+              <tr data-status="wait"><td class="fw-semibold">#1828</td><td><div class="cust"><span class="c-ava a2">JD</span>James Doyle</div></td><td>Headphones X</td><td class="fw-semibold">$89.50</td><td><span class="pill wait">Pending</span></td><td class="text-end muted">Nov 20</td></tr>
+              <tr data-status="ok"><td class="fw-semibold">#1827</td><td><div class="cust"><span class="c-ava a3">SR</span>Sara Roy</div></td><td>Annual Plan</td><td class="fw-semibold">$499.00</td><td><span class="pill ok">Completed</span></td><td class="text-end muted">Nov 20</td></tr>
+              <tr data-status="fail"><td class="fw-semibold">#1826</td><td><div class="cust"><span class="c-ava a4">LN</span>Leo Nunez</div></td><td>Smart Watch</td><td class="fw-semibold">$220.00</td><td><span class="pill fail">Refunded</span></td><td class="text-end muted">Nov 19</td></tr>
+              <tr data-status="ok"><td class="fw-semibold">#1825</td><td><div class="cust"><span class="c-ava a5">TW</span>Tina Wu</div></td><td>Pro Subscription</td><td class="fw-semibold">$149.00</td><td><span class="pill ok">Completed</span></td><td class="text-end muted">Nov 19</td></tr>
+              <tr data-status="wait"><td class="fw-semibold">#1824</td><td><div class="cust"><span class="c-ava a1">AB</span>Aarav Bose</div></td><td>Keyboard Pro</td><td class="fw-semibold">$74.00</td><td><span class="pill wait">Pending</span></td><td class="text-end muted">Nov 18</td></tr>
+              <tr data-status="ok"><td class="fw-semibold">#1823</td><td><div class="cust"><span class="c-ava a2">EF</span>Emma Ford</div></td><td>Annual Plan</td><td class="fw-semibold">$499.00</td><td><span class="pill ok">Completed</span></td><td class="text-end muted">Nov 18</td></tr>
+              <tr data-status="ok"><td class="fw-semibold">#1822</td><td><div class="cust"><span class="c-ava a3">RG</span>Ravi Gupta</div></td><td>Webcam 4K</td><td class="fw-semibold">$120.00</td><td><span class="pill ok">Completed</span></td><td class="text-end muted">Nov 17</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+</body>
+</html>

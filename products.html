@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Products · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="products" data-title="Products" data-subtitle="Your catalogue — stock, pricing and categories.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <div class="toolbar">
+        <div class="filter-tabs" data-target="#productGrid"><button class="active" data-filter="all">All</button><button data-filter="audio">Audio</button><button data-filter="wearable">Wearables</button><button data-filter="plan">Plans</button></div>
+        <div class="d-flex gap-2 align-items-center">
+          <div class="search-box"><i class="bi bi-search"></i><input type="text" placeholder="Search products..." data-search="#productGrid > div" aria-label="Search products" /></div>
+          <button class="btn-grad"><i class="bi bi-plus-lg"></i> Add Product</button>
+        </div>
+      </div>
+
+      <div class="grid-4" id="productGrid">
+        <div class="product-card" data-status="audio"><div class="p-thumb ic-violet"><i class="bi bi-headphones"></i><span class="pill ok p-stock">In stock</span></div><div class="p-body"><h6>Headphones X</h6><span class="p-cat">Audio</span><div class="p-foot"><span class="p-price">$89</span><span class="chip g">142 left</span></div></div></div>
+        <div class="product-card" data-status="wearable"><div class="p-thumb ic-blue"><i class="bi bi-smartwatch"></i><span class="pill ok p-stock">In stock</span></div><div class="p-body"><h6>Smart Watch</h6><span class="p-cat">Wearable</span><div class="p-foot"><span class="p-price">$220</span><span class="chip g">58 left</span></div></div></div>
+        <div class="product-card" data-status="plan"><div class="p-thumb ic-green"><i class="bi bi-gem"></i><span class="pill ok p-stock">Active</span></div><div class="p-body"><h6>Pro Subscription</h6><span class="p-cat">Plan</span><div class="p-foot"><span class="p-price">$149</span><span class="chip b">Monthly</span></div></div></div>
+        <div class="product-card" data-status="audio"><div class="p-thumb ic-amber"><i class="bi bi-mic"></i><span class="pill wait p-stock">Low</span></div><div class="p-body"><h6>USB Microphone</h6><span class="p-cat">Audio</span><div class="p-foot"><span class="p-price">$65</span><span class="chip a">9 left</span></div></div></div>
+        <div class="product-card" data-status="wearable"><div class="p-thumb ic-violet"><i class="bi bi-camera-video"></i><span class="pill ok p-stock">In stock</span></div><div class="p-body"><h6>Webcam 4K</h6><span class="p-cat">Wearable</span><div class="p-foot"><span class="p-price">$120</span><span class="chip g">73 left</span></div></div></div>
+        <div class="product-card" data-status="audio"><div class="p-thumb ic-blue"><i class="bi bi-keyboard"></i><span class="pill fail p-stock">Out</span></div><div class="p-body"><h6>Keyboard Pro</h6><span class="p-cat">Audio</span><div class="p-foot"><span class="p-price">$74</span><span class="chip">0 left</span></div></div></div>
+        <div class="product-card" data-status="plan"><div class="p-thumb ic-green"><i class="bi bi-calendar-check"></i><span class="pill ok p-stock">Active</span></div><div class="p-body"><h6>Annual Plan</h6><span class="p-cat">Plan</span><div class="p-foot"><span class="p-price">$499</span><span class="chip b">Yearly</span></div></div></div>
+        <div class="product-card" data-status="wearable"><div class="p-thumb ic-amber"><i class="bi bi-mouse"></i><span class="pill ok p-stock">In stock</span></div><div class="p-body"><h6>Wireless Mouse</h6><span class="p-cat">Wearable</span><div class="p-foot"><span class="p-price">$39</span><span class="chip g">210 left</span></div></div></div>
+      </div>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+</body>
+</html>

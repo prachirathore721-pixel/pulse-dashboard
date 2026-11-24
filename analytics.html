@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Analytics · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="analytics" data-title="Analytics" data-subtitle="Traffic, engagement and performance insights.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <section class="stats-grid">
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-violet"><i class="bi bi-eye-fill"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 14%</span></div><h3 class="stat-value" data-count="284300">0</h3><p class="stat-label">Page Views</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-blue"><i class="bi bi-person-walking"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 7.9%</span></div><h3 class="stat-value" data-count="52140">0</h3><p class="stat-label">Visitors</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-green"><i class="bi bi-clock-history"></i></span><span class="trend up"><i class="bi bi-arrow-up-right"></i> 3.1%</span></div><h3 class="stat-value" data-count="4.2" data-suffix="m" data-decimals="1">0m</h3><p class="stat-label">Avg. Session</p></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-icon ic-amber"><i class="bi bi-box-arrow-right"></i></span><span class="trend down"><i class="bi bi-arrow-down-right"></i> 1.8%</span></div><h3 class="stat-value" data-count="38.6" data-suffix="%" data-decimals="1">0%</h3><p class="stat-label">Bounce Rate</p></div>
+      </section>
+
+      <section class="grid-2">
+        <div class="panel"><div class="panel-head"><div><h5 class="panel-title">Visitors Overview</h5><p class="panel-sub">Last 12 months</p></div></div><div class="chart-wrap"><canvas id="visitorsChart"></canvas></div></div>
+        <div class="panel"><div class="panel-head"><div><h5 class="panel-title">Devices</h5><p class="panel-sub">By share</p></div></div>
+          <div class="chart-wrap donut"><canvas id="devicesChart"></canvas><div class="donut-center"><strong>63%</strong><span>Mobile</span></div></div>
+          <ul class="legend"><li><span class="d1"></span>Mobile <b>63%</b></li><li><span class="d2"></span>Desktop <b>28%</b></li><li><span class="d3"></span>Tablet <b>9%</b></li></ul>
+        </div>
+      </section>
+
+      <section class="grid-2">
+        <div class="panel"><div class="panel-head"><div><h5 class="panel-title">Sales by Category</h5><p class="panel-sub">This quarter</p></div></div><div class="chart-wrap"><canvas id="catChart"></canvas></div></div>
+        <div class="panel">
+          <div class="panel-head"><div><h5 class="panel-title">Top Countries</h5><p class="panel-sub">By visitors</p></div></div>
+          <div class="goal-list">
+            <div class="goal"><div class="goal-row"><span>🇺🇸 United States</span><b>42%</b></div><div class="bar"><i style="width:42%"></i></div></div>
+            <div class="goal"><div class="goal-row"><span>🇮🇳 India</span><b>23%</b></div><div class="bar"><i style="width:23%" class="g2"></i></div></div>
+            <div class="goal"><div class="goal-row"><span>🇬🇧 United Kingdom</span><b>15%</b></div><div class="bar"><i style="width:15%" class="g3"></i></div></div>
+            <div class="goal"><div class="goal-row"><span>🇩🇪 Germany</span><b>11%</b></div><div class="bar"><i style="width:11%"></i></div></div>
+            <div class="goal"><div class="goal-row"><span>🇦🇺 Australia</span><b>9%</b></div><div class="bar"><i style="width:9%" class="g2"></i></div></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

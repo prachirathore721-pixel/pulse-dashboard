@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(){try { if (localStorage.getItem("pulse-auth") !== "1") { window.location.replace("login.html"); return; } var t = localStorage.getItem("pulse-theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark");document.documentElement.setAttribute("data-bs-theme",t);if(localStorage.getItem("pulse-collapsed")==="1"&&window.matchMedia&&matchMedia("(min-width: 992px)").matches)document.documentElement.classList.add("sidebar-collapsed");}catch(e){}})();</script>
+  <title>Help · Pulse Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="help" data-title="Help & Support" data-subtitle="Answers, guides and a way to reach us.">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+    <main class="content" id="page">
+
+      <section class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><div><h5 class="panel-title">Frequently Asked</h5><p class="panel-sub">The quick answers</p></div></div>
+          <details class="faq" open><summary>How do I add a new product?</summary><p>Go to Products and click “Add Product”. Fill in the name, category, price and stock, then save — it appears in your catalogue instantly.</p></details>
+          <details class="faq"><summary>How do I invite a team member?</summary><p>Open Roles &amp; Access and click “Invite Member”. Enter their email and choose a role (Admin, Editor or Viewer). They receive an invite link to join.</p></details>
+          <details class="faq"><summary>Can I export my reports?</summary><p>Yes. On the Reports page every card has a Download button for PDF or CSV. Recently generated exports are listed below for re-download.</p></details>
+          <details class="faq"><summary>How do I switch to dark or light mode?</summary><p>Use the sun/moon toggle in the top bar, or the Dark mode switch under Settings → Appearance. Your choice is remembered on this device.</p></details>
+          <details class="faq"><summary>How is my billing handled?</summary><p>Head to Billing to view your current plan, update your payment method and download past invoices at any time.</p></details>
+        </div>
+
+        <div class="d-flex flex-column gap-4">
+          <div class="panel text-center">
+            <span class="stat-icon ic-violet mx-auto mb-3 d-grid" style="width:52px;height:52px"><i class="bi bi-chat-dots-fill"></i></span>
+            <h6 class="fw-bold">Need more help?</h6>
+            <p class="panel-sub mb-3">Our team usually replies within an hour.</p>
+            <a href="#" class="btn-grad w-100 justify-content-center"><i class="bi bi-headset"></i> Contact Support</a>
+          </div>
+          <div class="panel">
+            <h6 class="fw-bold mb-3">Quick links</h6>
+            <a href="#" class="menu-item"><span class="mi-ico ic-blue"><i class="bi bi-book"></i></span>Documentation</a>
+            <a href="#" class="menu-item"><span class="mi-ico ic-green"><i class="bi bi-play-circle"></i></span>Video tutorials</a>
+            <a href="#" class="menu-item"><span class="mi-ico ic-amber"><i class="bi bi-people"></i></span>Community forum</a>
+            <a href="#" class="menu-item"><span class="mi-ico ic-violet"><i class="bi bi-flag"></i></span>Report a bug</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="js/shell.js"></script>
+</body>
+</html>
